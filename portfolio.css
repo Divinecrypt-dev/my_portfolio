@@ -1,0 +1,613 @@
+/* --- Base Styles & Variables --- */
+:root {
+    --primary-color: #007bff; /* Example: Blue */
+    --secondary-color: #6c757d; /* Example: Gray */
+    --background-color: #f8f9fa;
+    --text-color: #343a40;
+    --heading-color: #212529;
+    --card-bg: #ffffff;
+    --border-color: #dee2e6;
+    --link-hover-color: #0056b3;
+    --font-primary: 'Poppins', sans-serif;
+    --transition-speed: 0.4s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
+ul {
+    list-style: none;
+}
+
+.section {
+    padding: 80px 0;
+    overflow-x: hidden; /* Prevent horizontal scrollbars from animations */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--heading-color);
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Underline effect for section titles */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* --- Header & Navigation --- */
+#header {
+    background: var(--card-bg);
+    color: var(--text-color);
+    position: fixed; /* Changed to fixed */
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color var(--transition-speed) ease;
+}
+
+#header.scrolled {
+     background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+     backdrop-filter: blur(5px); /* Optional blur effect */
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Wider container for nav */
+    margin: 0 auto;
+    padding: 15px 20px;
+    height: 70px;
+}
+
+.logo a {
+    color: var(--heading-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+    transition: color var(--transition-speed) ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: var(--primary-color);
+    transition: width var(--transition-speed) ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+    background-color: var(--primary-color);
+}
+
+
+.burger { /* Hamburger Icon for Mobile */
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* --- Buttons --- */
+.btn, .btn-secondary {
+    display: inline-block;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all var(--transition-speed) ease;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn { /* Primary Button */
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: var(--link-hover-color);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary { /* Secondary Button (e.g., GitHub links) */
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.btn i, .btn-secondary i {
+    margin-right: 8px;
+}
+
+
+/* --- About Section --- */
+#about {
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(240, 240, 255, 0.8)), url('[Optional: path/to/subtle_background.png]'); /* Subtle background */
+    background-size: cover;
+    padding-top: 120px; /* Add padding to offset fixed header */
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 2;
+}
+.about-text p {
+    margin-bottom: 15px;
+}
+
+.about-image { /* Style if you add an image */
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    border-radius: 50%;
+    max-width: 300px;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: var(--heading-color);
+    font-size: 1.8rem;
+    margin-right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+/* --- Skills Section --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.skill-category {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category h3 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.skill-category ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.skill-category ul li i {
+    margin-right: 10px;
+    color: var(--primary-color);
+    width: 20px; /* Align icons */
+    text-align: center;
+}
+
+
+/* --- Education Section --- */
+#education {
+     background-color: #eef2f7; /* Slightly different background */
+}
+
+.education-item {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    max-width: 700px;
+    margin: 0 auto; /* Center the single item */
+    text-align: center;
+}
+
+.education-item h3 {
+    color: var(--heading-color);
+    font-size: 1.8rem;
+}
+.education-item .institution {
+    font-style: italic;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+.education-item ul {
+    margin-bottom: 20px;
+    text-align: left; /* Align bullet points left */
+    display: inline-block; /* Center the list block */
+}
+
+.education-item ul li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.education-item ul li::before {
+    content: '\2022'; /* Bullet point */
+    color: var(--primary-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1.3em;
+    position: absolute;
+    left: 10px;
+}
+
+
+/* --- Interests Section --- */
+.interests-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: start;
+}
+
+.interests-list i {
+    margin-right: 15px;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-top: 4px; /* Align icon better with text */
+}
+
+
+/* --- Projects Section --- */
+#projects {
+    background-color: #eef2f7; /* Alternate background */
+}
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    padding: 25px;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.project-card h3 {
+    color: var(--heading-color);
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    margin-bottom: 10px;
+    flex-grow: 1; /* Make description take available space */
+}
+
+.tech-stack {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+.tech-stack strong {
+    color: var(--text-color);
+}
+
+.project-links {
+    margin-top: auto; /* Push links to the bottom */
+}
+
+.project-links a {
+    margin-right: 10px;
+}
+
+
+/* --- Contact Section --- */
+#contact form {
+    max-width: 700px;
+    margin: 30px auto 0 auto;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+#contact .contact-methods {
+    text-align: center;
+    margin-bottom: 30px;
+}
+#contact .contact-methods p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+#contact .contact-methods i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--heading-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color var(--transition-speed) ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+#contact form button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+.form-status {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+.form-status.success {
+    color: #28a745; /* Green */
+}
+.form-status.error {
+    color: #dc3545; /* Red */
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--heading-color);
+    color: #f1f1f1;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px; /* Ensure space before footer */
+}
+footer .container {
+    position: relative;
+}
+
+.back-to-top {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    color: #fff;
+    background-color: rgba(0, 123, 255, 0.7);
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color var(--transition-speed) ease;
+}
+.back-to-top:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* --- Scroll Reveal Animation --- */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay for elements within a section */
+.scroll-reveal.visible .skill-category,
+.scroll-reveal.visible .project-card,
+.scroll-reveal.visible .interests-list li {
+    transition-delay: calc(0.1s * var(--reveal-delay, 1)); /* Stagger effect */
+}
+#ask {
+    text-align: center;
+}
+
+
+/* --- Responsive Design --- */
+@media(max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    /* Mobile Navigation */
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: calc(100vh - 70px); /* Full height minus header */
+        top: 70px; /* Position below header */
+        background-color: var(--card-bg);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60%; /* Adjust width as needed */
+        transform: translateX(100%); /* Hide off-screen */
+        transition: transform 0.5s ease-in;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+        opacity: 0; /* Initially hidden for animation */
+    }
+
+    .burger {
+        display: block; /* Show hamburger */
+    }
+
+    /* Active state for mobile nav */
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    /* Burger animation */
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2 {
+        opacity: 0;
+    }
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* Mobile Nav Link Animation */
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-image {
+        margin-top: 30px;
+    }
+    .about-image img {
+        max-width: 250px;
+    }
+
+    .skills-grid, .projects-grid {
+        grid-template-columns: 1fr; /* Stack on smaller screens */
+    }
+}
