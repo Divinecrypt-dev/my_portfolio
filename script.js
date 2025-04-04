@@ -103,28 +103,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            // IMPORTANT: Prevent default ONLY IF you are NOT using Netlify forms' default handling
-            // or if you are handling submission entirely via JS (e.g., with fetch to Formspree/backend)
-            // If using standard HTML form submission to Netlify/Formspree action URL, DO NOT preventDefault.
-            // Let's assume for now we give basic feedback but let the form submit normally:
+            
 
-             // e.preventDefault(); // Uncomment this if handling submission via fetch below
-
-            // Basic Front-End Feedback (optional, enhances UX)
+            // Basic Front-End Feedback (enhances UX)
             formStatus.textContent = 'Sending...';
             formStatus.className = 'form-status'; // Reset classes
 
             // Simulate network delay for feedback (remove if using fetch)
             setTimeout(() => {
                 // **Important:** This is just front-end feedback.
-                // The form needs a server/service (like Netlify Forms or Formspree)
+                
                 // configured in the HTML's action attribute to actually send the data.
                 formStatus.textContent = 'Message sent successfully! (Note: Requires backend setup)';
                 formStatus.classList.add('success');
                  contactForm.reset(); // Clear the form
             }, 1000);
 
-            /* // --- Example using Fetch for Formspree (requires preventDefault above) ---
+            /* // ---  using Fetch for Formspree (requires preventDefault above) ---
             e.preventDefault();
             const formData = new FormData(contactForm);
             fetch(contactForm.action, {
