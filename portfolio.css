@@ -1,7 +1,7 @@
 /* --- Base Styles & Variables --- */
 :root {
-    --primary-color: #007bff; /* Example: Blue */
-    --secondary-color: #6c757d; /* Example: Gray */
+    --primary-color: #007bff; 
+    --secondary-color: #6c757d; 
     --background-color: #f8f9fa;
     --text-color: #343a40;
     --heading-color: #212529;
