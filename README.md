@@ -25,7 +25,7 @@ Live Demo: [**https://github.com/Divinecrypt-dev/my_portfolio.git**] <!-- IMPORT
 *   **Deployment:** GitHub Pages 
 *  
 
-## 🚀 Setup and Local Development (Optional)
+## 🚀 Setup and Local Development
 
 To run this project locally:
 
@@ -46,7 +46,7 @@ To run this project locally:
 *   **Code Comments:** Added where necessary to explain complex parts of the CSS or JavaScript.
 *   **Clean Code:** Followed consistent formatting and naming conventions.
 
-## 🎯 Evaluation Criteria Focus (If applicable for assignment)
+## 🎯 Evaluation Criteria Focus
 
 *   **Creativity:** Implemented scroll animations, custom styling, and a clean layout.
 *   **Code Quality:** Used semantic HTML and organized CSS with variables. Vanilla JS for targeted interactivity.
@@ -58,9 +58,9 @@ To run this project locally:
 ## 👤 Author
 
 *   **Edoja Tega Divine**
-    *   **LinkedIn:** [www.linkedin.com/in/tega-edoja-57235a212] <!-- Verify/Replace URL -->
-    *   **GitHub:** [https://github.com/Divinecrypt-dev/] <!-- Replace URL -->
-    *   **Portfolio:** [https://github.com/Divinecrypt-dev/my_portfolio.git] <!-- Replace URL -->
+    *   **LinkedIn:** [www.linkedin.com/in/tega-edoja-57235a212]
+    *   **GitHub:** [https://github.com/Divinecrypt-dev/]
+    *   **Portfolio:** [https://github.com/Divinecrypt-dev/my_portfolio.git]
 
 ## 🙏 Acknowledgments
 
